@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Employee_specific_model;
+
+class employee_specific_controller extends Controller
+{
+    public function index()
+    {
+        $data = Employee_specific_model::all();
+        return view('employee_specific', ['data' => $data]);
+    }
+}
