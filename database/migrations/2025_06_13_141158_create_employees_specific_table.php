@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         schema::create('employees_specific', function (Blueprint $table) {
-            $table->id('emolyee_id');
-            $table->timestamp('date_Of_date')->nullable();
+            $table->id('employee_id');
             $table->string('first_name',100);
             $table->string('second_name',100);
             $table->string('third_name',100);
             $table->string('last_name',100);
             $table->string('national_id',50);
-            $table->date('date_of_issue');
+            $table->string('date_of_issue',50);
             $table->string('place_of_issue',100);
             $table->string('nationality',50);
             $table->string('place_of_birth',100);
@@ -41,19 +40,19 @@ return new class extends Migration
             $table->string('employ_email',100);
             $table->longText('academic_qualification_1');
             $table->string('university_1',100);
-            $table->string('university_locition_1',100);
+            $table->string('university_location_1',100);
             $table->string('num_of_years_1',225);
             $table->string('gpa_1',10);
             $table->string('year_graduated_1',10);
             $table->longText('academic_qualification_2');
             $table->string('university_2',100);
-            $table->string('university_locition_2',100);
+            $table->string('university_location_2',100);
             $table->string('num_of_years_2',225);
             $table->string('gpa_2',10);
             $table->string('year_graduated_2',10);
             $table->longText('academic_qualification_3');
             $table->string('university_3',100);
-            $table->string('university_locition_3',100);
+            $table->string('university_location_3',100);
             $table->string('num_of_years_3',225);
             $table->string('gpa_3',10);
             $table->string('year_graduated_3',10);
@@ -131,7 +130,7 @@ return new class extends Migration
             $table->text('reason_notes')->nullsble();
             $table->timestamps();
         });
-        
+
     }
 
     /**

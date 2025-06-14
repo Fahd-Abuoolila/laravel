@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('delete_appointed', function (Blueprint $table) {
-            $table->id('emolyee_id');
-            $table->timestamp('date_Of_date')->nullable();
+            $table->id('employee_id');
             $table->string('first_name',100);
             $table->string('second_name',100);
             $table->string('third_name',100);
             $table->string('last_name',100);
             $table->string('national_id',50);
-            $table->date('date_of_issue');
+            $table->string('date_of_issue',50);
             $table->string('place_of_issue',100);
             $table->string('nationality',50);
             $table->string('place_of_birth',100);

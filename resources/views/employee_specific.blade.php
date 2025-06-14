@@ -6,13 +6,13 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta name='description' content='this system is private property'>
         <!-- link icon -->
-        <link rel='icon' href="{{ asset('img/Roaya_icon.png') }}">
+        <link rel='icon' href="{{ secure_asset('img/Roaya_icon.png') }}">
         <!-- link css -->
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/staff_data.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/all_min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/staff_data.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/menu.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.css') }}">
         <title>Roaya Pay</title>
         <style>
             .menu > ul > li:nth-child(1):not(.open) > a ,
@@ -23,9 +23,9 @@
     </head>
     <body>
         <!-- header -->
-        
+
         @include('addition.header')
-    
+
         <!-- content -->
         <div class='content'>
             <!-- menu -->
@@ -33,7 +33,7 @@
             <!-- show-board -->
             <div class='show-board'>
                 <div class='title-info'>
-                    <p>بيانات الموظفين</p>    
+                    <p>بيانات الموظفين</p>
                     <div class='dropdowns'>
                         <div class='dropdown mx-2 my-2'>
                             <button class='btn dropdown-toggle' type='button' data-toggle='dropdown' aria-expanded='false'>
@@ -42,7 +42,7 @@
                             <div class='dropdown-menu'>
                                 <a class='dropdown-item px-1' onclick="ExportToXLSX('xls')">
                                     <button class='btn btn-info text-center text-light ml-2 w-100'>
-                                        التصدير الي إكسيل   
+                                        التصدير الي إكسيل
                                     </button>
                                 </a>
                             </div>
@@ -114,7 +114,7 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                        </td>                 
+                                        </td>
                                     </tr>
                                     <form action='php/delete' method='post'>
                                         <div class='modal fade' id='exampleModal$i' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
@@ -122,7 +122,7 @@
                                                 <div class='modal-content'>
                                                     <div class='modal-header'>
                                                         <h5 class='modal-title' id='exampleModalLabel'>
-                                                            <span class='badge text-danger'>yy</span> 
+                                                            <span class='badge text-danger'>yy</span>
                                                         </h5>
                                                     </div>
                                                     <div class='modal-body'>
@@ -137,7 +137,7 @@
                                                         <button type='submit' class='btn btn-danger mr-2'>حذف</button>
                                                     </div>
                                                 </div>
-                                            </div>  
+                                            </div>
                                         </div>
                                     </form>
                                 @endforeach
@@ -152,16 +152,16 @@
         <!-- id form -->
         @include('addition.settings');
         <!-- js files -->
-        <script src="{{ asset('js/main.js') }}"></script>
-        <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
-        <script src="{{ asset('js/popper.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.js') }}"></script>
-        <script src="{{ asset('js/all.min.js') }}"></script>
-        <script src="{{ asset('js/menu.js') }}"></script>
-        <script src="{{ asset('js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js') }}"></script>
-        <script src="{{ asset('js/pdf.bundle.min.js') }}"></script>
-        <script src="{{ asset('js/pdf.bundle.js') }}"></script>
-        <script src="{{ asset('js/export.js') }}"></script>
+        <script src="{{ secure_asset('js/main.js') }}"></script>
+        <script src="{{ secure_asset('js/jquery-3.7.0.min.js') }}"></script>
+        <script src="{{ secure_asset('js/popper.min.js') }}"></script>
+        <script src="{{ secure_asset('js/bootstrap.js') }}"></script>
+        <script src="{{ secure_asset('js/all.min.js') }}"></script>
+        <script src="{{ secure_asset('js/menu.js') }}"></script>
+        <script src="{{ secure_asset('js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js') }}"></script>
+        <script src="{{ secure_asset('js/pdf.bundle.min.js') }}"></script>
+        <script src="{{ secure_asset('js/pdf.bundle.js') }}"></script>
+        <script src="{{ secure_asset('js/export.js') }}"></script>
         <script>
             // منع الرجوع للصفحة السابقة
             //

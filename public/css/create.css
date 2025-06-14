@@ -108,7 +108,7 @@ header {
     padding-bottom: 20px;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 9;
 }
 
 header>img {
@@ -180,16 +180,19 @@ header>h3::before {
 .animated-btn:hover::after {
     left: 120%;
 }
+
 .container>form>.employee {
     border-radius: 15px;
-    margin-top: 20px;
+    padding: 20px;
     background: #fff;
+    max-width: 85%;
+    margin: 20px auto 0;
 }
-
+/*
 .container>form>.employee.last {
     padding-bottom: 20px;
 }
-
+ */
 .container>form>.employee>span {
     display: block;
     width: 100%;
@@ -200,7 +203,79 @@ header>h3::before {
     text-align: center;
 }
 
-.container>form>.employee>.footer {
+.container>form>.employee .fields {
+    text-align: right !important;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+.container>form>.employee > .fields>.row:nth-child(5) {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container>form>.employee > .fields>.row:nth-child(5) .field {
+    -webkit-box-flex: 1 !important;
+    -ms-flex: 1 0 50% !important;
+    flex: 1 0 50% !important;
+    max-width: calc(90% / 3) !important;
+    margin-bottom: 20px;
+    height: auto;
+}
+.container>form>.employee > .fields>.row:nth-child(5) #img1 {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px 10px !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container>form>.employee > .fields>.row:nth-child(5) #img1 .field{
+    max-width: calc(95% / 2) !important;
+}
+@media (max-width: 416px) {
+    .container>form>.employee > .fields>.row:nth-child(2) .field  {
+        -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}
+@media (max-width: 1056px) {
+    .container>form>.employee > .fields>.row:nth-child(5) {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .container>form>.employee > .fields>.row:nth-child(5) #img1 {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px 10px !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .container>form>.employee > .fields>.row:nth-child(5) .field{
+        max-width: calc(90% / 2) !important;
+    }
+}
+@media (max-width: 654px) {
+    .container>form>.employee > .fields>.row:nth-child(5) .field,
+    .container>form>.employee > .fields>.row:nth-child(5) #img1 > .field{
+        max-width: calc(90% / 1) !important;
+    }
+    .container>form>.employee > .fields>.row:nth-child(5) #img1 {
+        flex-direction: column;
+    }
+}
+
+/* .container>form>.employee .footer {
     text-align: center;
     font-size: x-small;
     font-weight: bold;
@@ -208,39 +283,38 @@ header>h3::before {
     color: #7d6d6d;
 }
 
-.container>form>.employee>.fields {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
 
-.container>form>.employee.last>.fields {
+.container>form>.employee.last .fields {
     gap: 0 20px;
-}
+} */
 
-.container>form>.employee.last>.fields>.field {
+/* .container>form>.employee.last>.fields .field {
     margin-bottom: 0px;
 }
 
-.container>form>.employee>.fields>.field {
+.container>form>.employee>.fields .field {
     position: relative;
     margin-bottom: 20px;
     width: fit-content;
 }
+.container>form>.employee>.fields >.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+}
 
-.container>form>.employee>.fields>.field input, select {
-    width: 300px;
+.container>form>.employee>.fields .field input , select {
+    width: 246px !important;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 10px;
     outline: none;
     transition: border-color 0.3s;
+    min-width: 180px !important;
 }
 
-.container>form>.employee>.fields>.field label {
+.container>form>.employee>.fields .field label {
     position: absolute;
     top: 50%;
     right: 25px;
@@ -252,17 +326,17 @@ header>h3::before {
     pointer-events: none;
     text-align: center;
     font-weight: bold;
-}
+} */
 
-.container>form>.employee>.fields>.field select:not(:placeholder-shown)+label,
-.container>form>.employee>.fields>.field input:not(:placeholder-shown)+label,
-.container>form>.employee>.fields>.field textarea:focus+label,
-.container>form>.employee>.fields>.field textarea:not(:placeholder-shown)+label,
-.container>form>.employee>.fields>.field input:focus+label {
+/* .container>form>.employee>.fields .field select:not(:placeholder-shown)+label,
+.container>form>.employee>.fields .field input:not(:placeholder-shown)+label,
+.container>form>.employee>.fields .field textarea:focus+label,
+.container>form>.employee>.fields .field textarea:not(:placeholder-shown)+label,
+.container>form>.employee>.fields .field input:focus+label {
     top: -2px;
     background-color: #fff;
     color: #000;
-}
+} */
 
 .employee-btns .btns {
     padding: 20px 20px;
