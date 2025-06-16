@@ -181,12 +181,42 @@ header>h3::before {
     left: 120%;
 }
 
+.alert{
+    margin: 1rem auto 0;
+    max-width: 65%;
+}
+
 .container>form>.employee {
     border-radius: 15px;
     padding: 20px;
     background: #fff;
-    max-width: 85%;
+    max-width: 65%;
     margin: 20px auto 0;
+}
+@media (max-width: 1430px) {
+    .container>form>.employee ,
+    .alert{
+        max-width: 75%;
+    }
+}
+@media (max-width: 1419px) {
+    .container>form>.employee ,
+    .alert{
+        max-width: 85%;
+    }
+}
+@media (max-width: 1199px) {
+    .container>form>.employee ,
+    .alert{
+        max-width: 95%;
+    }
+}
+@media (max-width: 990px) {
+    .container>form>.employee ,
+    .alert{
+        max-width: 100%;
+        margin: 20px auto 0;
+    }
 }
 /*
 .container>form>.employee.last {
@@ -207,7 +237,7 @@ header>h3::before {
     text-align: right !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1420px) {
     .container {
         max-width: 100%;
     }

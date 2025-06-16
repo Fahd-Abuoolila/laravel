@@ -142,7 +142,7 @@
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="invalid-feedback">يجب ارفاق الملف المطلوب</div>
-                                <img id="frontOFcard_view" src="#" alt="معاينة الصورة" style="max-width: 100%; display: none; height: 198px;" />
+                                <img id="frontOFcard_view" src="#" alt="معاينة الصورة" style="max-width: 100%; display: none; height: 198px; margin: 0 auto;" />
                             </div>
                             <div class="custom-file field">
                                 <input type="file" accept=" .jpg , .jpeg , .png" class="custom-file-input" id="backOFcard" name="backOFcard" placeholder="" required>
@@ -151,7 +151,7 @@
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="invalid-feedback">يجب ارفاق الملف المطلوب</div>
-                                <img id="backOFcard_view" src="#" alt="معاينة الصورة" style="max-width: 100%; display: none; height: 198px;" />
+                                <img id="backOFcard_view" src="#" alt="معاينة الصورة" style="max-width: 100%; display: none; height: 198px; margin: 0 auto;" />
                             </div>
                         </div>
                         <div class="custom-file field">
@@ -161,7 +161,7 @@
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="invalid-feedback">يجب ارفاق الملف المطلوب</div>
-                            <img id="photoOFuser_view" src="#" alt="معاينة الصورة" style="max-width: 100%; display: none; height: 198px;" />
+                            <img id="photoOFuser_view" src="#" alt="معاينة الصورة" style="max-width: 100%; display: none; height: 198px; margin: 0 auto;" />
                         </div>
                     </div>
                 </div>
@@ -193,395 +193,415 @@
                     </div>
                     <div class="row mb-3">
                         <div class="field col-4">
-                            <label for="governorateSelect">اختر محافظة </label>
-                            <select type="text" id="governorateSelect" name="governorateSelect" class="form-control is-invalid" placeholder="" onchange="updateCenters()" required>
+                            <label for="governorateSelect">
+                                اختر محافظة
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select type="text" id="governorateSelect" name="governorateSelect" class="custom-select is-invalid" placeholder="" aria-describedby="validationServer04Feedback" onchange="updateCenters()" required>
                             </select>
                         </div>
                         <div class="field col-4">
-                            <label for="centerSelect"> مركز / حي</label>
-                            <select type="text" id="centerSelect" name="centerSelect" class="form-control is-invalid" placeholder="" required></select>
+                            <label for="centerSelect">
+                                 مركز / حي
+                                    <span class="text-danger">*</span>
+                                </label>
+                            <select type="text" id="centerSelect" name="centerSelect" class="custom-select is-invalid" placeholder="" required></select>
                         </div>
                         <div class="field col-4">
-                            <label for="address">محل السكن</label>
+                            <label for="address">
+                                محل السكن
+                                <span class="text-danger">*</span>
+                            </label>
                             <input type="text" id="address" name="address" class="form-control is-invalid" placeholder="" required>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="employee" id="qualification_1">
-                <span> 1 المؤهلات العلمية </span>
+                <span> المؤهل الدراسي </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="academic_qualification_1" name="academic_qualification_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="academic_qualification_1">المؤهل العلمي 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="university_1" name="university_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="university_1">اسم الجامعة 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="university_location_1" name="university_location_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="university_location_1">مكانها 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="num_of_year_1" name="num_of_year_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="num_of_year_1">مدة الدراسة 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="gpa_1" name="gpa_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="gpa_1">المعدل التراكمي 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="year_graduated_1" name="year_graduated_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="year_graduated_1"> سنة التخرج 1</label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="academic_qualification_1">
+                                المؤهل الدراسي
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select type="text" id="academic_qualification_1" name="academic_qualification_1" class="custom-select is-invalid" placeholder="" required>
+                                <option selected disabled value="">-</option>
+                                <option value="بكالوريوس">بكالوريوس</option>
+                                <option value="ليسانس">ليسانس</option>
+                                <option value="مؤهل فوق المتوسط">مؤهل فوق المتوسط</option>
+                                <option value="مؤهل متوسط">مؤهل متوسط</option>
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="scientific_specialization_1">
+                                التخصص العلمي
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" id="scientific_specialization_1" name="scientific_specialization_1" class="form-control is-invalid" placeholder="" required>
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="year_graduated_1">
+                                سنة التخرج
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select type="text" id="year_graduated_1" name="year_graduated_1" class="custom-select is-invalid" placeholder="" required>
+                                <option selected disabled value="">-</option>
+                                @for ($year = 1980; $year <= date('Y'); $year++)
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="university_1">
+                                جهة المؤهل
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" id="university_1" name="university_1" class="form-control is-invalid" placeholder="" required>
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_qualification w-75" type="button" id="add_qualification_2" onclick="addQualification_2()">
-                        اضافة مؤهل علمي
+                        اضافة دراسات عليا
                     </button>
                 </div>
             </div>
             <div class="employee" id="qualification_2">
-                <span>2 المؤهلات العلمية </span>
+                <span> دراسات عليا </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="academic_qualification_2" name="academic_qualification_2" class="form-control is-invalid" placeholder="">
-                        <label for="academic_qualification_2">المؤهل العلمي 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="university_2" name="university_2" class="form-control is-invalid" placeholder="">
-                        <label for="university_2">اسم الجامعة 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="university_location_2" name="university_location_2" class="form-control is-invalid" placeholder="">
-                        <label for="university_location_2">مكانها 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="num_of_year_2" name="num_of_year_2" class="form-control is-invalid" placeholder="">
-                        <label for="num_of_year_2">مدة الدراسة 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="gpa_2" name="gpa_2" class="form-control is-invalid" placeholder="">
-                        <label for="gpa_2">المعدل التراكمي 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="year_graduated_2" name="year_graduated_2" class="form-control is-invalid" placeholder="">
-                        <label for="year_graduated_2"> سنة التخرج 2</label>
-                    </div>
-                </div>
-                <div class="addtion">
-                    <button class="btn btn-secondary add_qualification w-75" type="button" id="add_qualification_3" onclick="addQualification_3()">
-                        اضافة مؤهل علمي
-                    </button>
-                </div>
-            </div>
-            <div class="employee" id="qualification_3">
-                <span>3 المؤهلات العلمية </span>
-                <div class="fields">
-                    <div class="field">
-                        <input type="text" id="academic_qualification_3" name="academic_qualification_3" class="form-control is-invalid" placeholder="">
-                        <label for="academic_qualification_3">المؤهل العلمي 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="university_3" name="university_3" class="form-control is-invalid" placeholder="">
-                        <label for="university_3">اسم الجامعة 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="university_location_3" name="university_location_3" class="form-control is-invalid" placeholder="">
-                        <label for="university_location_3">مكانها 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="num_of_year_3" name="num_of_year_3" class="form-control is-invalid" placeholder="">
-                        <label for="num_of_year_3">مدة الدراسة 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="gpa_3" name="gpa_3" class="form-control is-invalid" placeholder="">
-                        <label for="gpa_3">المعدل التراكمي 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="year_graduated_3" name="year_graduated_3" class="form-control is-invalid" placeholder="">
-                        <label for="year_graduated_3"> سنة التخرج 3</label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="academic_qualification_2">
+                                الدراسة العليا
+                            </label>
+                            <select type="text" id="academic_qualification_2" name="academic_qualification_2" class="custom-select is-invalid" placeholder="" >
+                                <option selected disabled value="-">-</option>
+                                <option value="دكتوراة">دكتوراة</option>
+                                <option value="ماجستير">ماجستير</option>
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="scientific_specialization_2">
+                                التخصص العلمي
+                            </label>
+                            <input type="text" id="scientific_specialization_2" name="scientific_specialization_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="year_graduated_2">
+                                سنة التخرج
+                            </label>
+                            <select type="text" id="year_graduated_2" name="year_graduated_2" class="custom-select is-invalid" placeholder="" >
+                                <option selected disabled value="">-</option>
+                                @for ($year = 1980; $year <= date('Y'); $year++)
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6">
+                            <label for="university_2">
+                                جهة المؤهل
+                            </label>
+                            <input type="text" id="university_2" name="university_2" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="employee" id="course_1">
-                <span> 1 الدورات التدريبية  </span>
+                <span> الدورة التدريبية الأولى </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="course_name_1" name="course_name_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="course_name_1"> اسم الدورة 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="duration_1" name="duration_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="duration_1">المدة 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="sponsor_1" name="sponsor_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="sponsor_1">الجهة التى اعدتها 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_1" name="date_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="date_1">تاريخها 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="location_1" name="location_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="location_1">مكانها 1</label>
+                    <div class="row mb-3">
+                        <div class="field col-12">
+                            <label for="course_name_1"> اسم الدورة </label>
+                            <input type="text" id="course_name_1" name="course_name_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="duration_1">المدة </label>
+                            <input type="text" id="duration_1" name="duration_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="date_1">تاريخها </label>
+                            <input type="date" id="date_1" name="date_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="sponsor_1">جهة الدورة </label>
+                            <input type="text" id="sponsor_1" name="sponsor_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="location_1">مكانها </label>
+                            <input type="text" id="location_1" name="location_1" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_qualification w-75" type="button" id="training_courses_1" onclick="add_course_2()">
-                        اضافة دورة تدريبية
+                         دورة تدريبية اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="course_2">
-                <span> 2 الدورات التدريبية  </span>
+                <span>  الدورة التدريبية الثانية </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="course_name_2" name="course_name_2" class="form-control is-invalid" placeholder="" >
-                        <label for="course_name_2"> اسم الدورة 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="duration_2" name="duration_2" class="form-control is-invalid" placeholder="" >
-                        <label for="duration_2">المدة 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="sponsor_2" name="sponsor_2" class="form-control is-invalid" placeholder="" >
-                        <label for="sponsor_2">الجهة التى اعدتها 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_2" name="date_2" class="form-control is-invalid" placeholder="" >
-                        <label for="date_2">تاريخها 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="location_2" name="location_2" class="form-control is-invalid" placeholder="" >
-                        <label for="location_2">مكانها 2</label>
+                    <div class="row mb-3">
+                        <div class="field col-12">
+                            <label for="course_name_2"> اسم الدورة </label>
+                            <input type="text" id="course_name_2" name="course_name_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="duration_2">المدة </label>
+                            <input type="text" id="duration_2" name="duration_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="date_2">تاريخها </label>
+                            <input type="date" id="date_2" name="date_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="sponsor_2">جهة الدورة </label>
+                            <input type="text" id="sponsor_2" name="sponsor_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="location_2">مكانها </label>
+                            <input type="text" id="location_2" name="location_2" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_qualification w-75" type="button" id="training_courses_2" onclick="add_course_3()">
-                        اضافة دورة تدريبية
+                         دورة تدريبية اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="course_3">
-                <span> 3 الدورات التدريبية  </span>
+                <span>  الدورة التدريبية الثالثة </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="course_name_3" name="course_name_3" class="form-control is-invalid" placeholder="" >
-                        <label for="course_name_3"> اسم الدورة 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="duration_3" name="duration_3" class="form-control is-invalid" placeholder="" >
-                        <label for="duration_3">المدة 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="sponsor_3" name="sponsor_3" class="form-control is-invalid" placeholder="" >
-                        <label for="sponsor_3">الجهة التى اعدتها 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_3" name="date_3" class="form-control is-invalid" placeholder="" >
-                        <label for="date_3">تاريخها 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="location_3" name="location_3" class="form-control is-invalid" placeholder="" >
-                        <label for="location_3">مكانها 3</label>
+                    <div class="row mb-3">
+                        <div class="field col-12">
+                            <label for="course_name_3"> اسم الدورة </label>
+                            <input type="text" id="course_name_3" name="course_name_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="duration_3">المدة </label>
+                            <input type="text" id="duration_3" name="duration_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="date_3">تاريخها </label>
+                            <input type="date" id="date_3" name="date_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="sponsor_3">جهة الدورة </label>
+                            <input type="text" id="sponsor_3" name="sponsor_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="location_3">مكانها </label>
+                            <input type="text" id="location_3" name="location_3" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_qualification w-75" type="button" id="training_courses_3" onclick="add_course_4()">
-                        اضافة دورة تدريبية
+                         دورة تدريبية اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="course_4">
-                <span> 4 الدورات التدريبية  </span>
+                <span>  الدورة التدريبية الرابعة </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="course_name_4" name="course_name_4" class="form-control is-invalid" placeholder="" >
-                        <label for="course_name_4"> اسم الدورة 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="duration_4" name="duration_4" class="form-control is-invalid" placeholder="" >
-                        <label for="duration_4">المدة 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="sponsor_4" name="sponsor_4" class="form-control is-invalid" placeholder="" >
-                        <label for="sponsor_4">الجهة التى اعدتها 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_4" name="date_4" class="form-control is-invalid" placeholder="" >
-                        <label for="date_4">تاريخها 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="location_4" name="location_4" class="form-control is-invalid" placeholder="" >
-                        <label for="location_4">مكانها 4</label>
+                    <div class="row mb-3">
+                        <div class="field col-12">
+                            <label for="course_name_4"> اسم الدورة </label>
+                            <input type="text" id="course_name_4" name="course_name_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="duration_4">المدة </label>
+                            <input type="text" id="duration_4" name="duration_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="date_4">تاريخها </label>
+                            <input type="date" id="date_4" name="date_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="sponsor_4">جهة الدورة </label>
+                            <input type="text" id="sponsor_4" name="sponsor_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="location_4">مكانها </label>
+                            <input type="text" id="location_4" name="location_4" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_qualification w-75" type="button" id="training_courses_4" onclick="add_course_5()">
-                        اضافة دورة تدريبية
+                         دورة تدريبية اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="course_5">
-                <span> 5 الدورات التدريبية  </span>
+                <span> الدورة التدريبية الخامسة</span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="course_name_5" name="course_name_5" class="form-control is-invalid" placeholder="" >
-                        <label for="course_name_5"> اسم الدورة 5</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="duration_5" name="duration_5" class="form-control is-invalid" placeholder="" >
-                        <label for="duration_5">المدة 5</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="sponsor_5" name="sponsor_5" class="form-control is-invalid" placeholder="" >
-                        <label for="sponsor_5">الجهة التى اعدتها 5</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_5" name="date_5" class="form-control is-invalid" placeholder="" >
-                        <label for="date_5">تاريخها 5</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="location_5" name="location_5" class="form-control is-invalid" placeholder="" >
-                        <label for="location_5">مكانها 5</label>
+                    <div class="row mb-3">
+                        <div class="field col-12">
+                            <label for="course_name_5"> اسم الدورة </label>
+                            <input type="text" id="course_name_5" name="course_name_5" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="duration_5">المدة </label>
+                            <input type="text" id="duration_5" name="duration_5" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="date_5">تاريخها </label>
+                            <input type="date" id="date_5" name="date_5" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="sponsor_5">جهة الدورة </label>
+                            <input type="text" id="sponsor_5" name="sponsor_5" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="location_5">مكانها </label>
+                            <input type="text" id="location_5" name="location_5" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="employee" id="last_jobs_1">
-                <span> 1 الوظائف الاخيرة</span>
+                <span>  الوظيفة الأولى</span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="employer_name_1" name="employer_name_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="employer_name_1">1 اسم الجهة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="positica_1" name="positica_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="positica_1">اسم الوظيفة 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_from_1" name="date_from_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="date_from_1">التاريخ من 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_to_1" name="date_to_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="date_to_1"> التاريخ الي 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="basic_salary_1" name="basic_salary_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="basic_salary_1"> الراتب الاساسي 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="reasons_for_leaving_1" name="reasons_for_leaving_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="reasons_for_leaving_1"> سبب ترك الوظيفة 1</label>
+                    <div class="row mb-3">
+                        <div class="field col-6 ">
+                            <label for="positica_1"> الوظيفة </label>
+                            <input type="text" id="positica_1" name="positica_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="employer_name_1"> اسم الجهة</label>
+                            <input type="text" id="employer_name_1" name="employer_name_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_from_1">التاريخ من </label>
+                            <input type="date" id="date_from_1" name="date_from_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_to_1"> التاريخ الي </label>
+                            <input type="date" id="date_to_1" name="date_to_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="basic_salary_1"> الراتب الاساسي </label>
+                            <input type="text" id="basic_salary_1" name="basic_salary_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="reasons_for_leaving_1"> سبب ترك الوظيفة </label>
+                            <input type="text" id="reasons_for_leaving_1" name="reasons_for_leaving_1" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_last_jobs w-75" type="button" id="add_last_jobs_2" onclick="addlastjobs_2()">
-                        إضافة عمل
+                        إضافة وظيفة اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="last_jobs_2">
-                <span> 2 الوظائف الاخيرة</span>
+                <span>  الوظيفة الثانية</span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="employer_name_2" name="employer_name_2" class="form-control is-invalid" placeholder="" >
-                        <label for="employer_name_2">2 اسم الجهة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="positica_2" name="positica_2" class="form-control is-invalid" placeholder="" >
-                        <label for="positica_2">اسم الوظيفة 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_from_2" name="date_from_2" class="form-control is-invalid" placeholder="" >
-                        <label for="date_from_2">التاريخ من 1</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_to_2" name="date_to_2" class="form-control is-invalid" placeholder="" >
-                        <label for="date_to_2"> التاريخ الي 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="basic_salary_2" name="basic_salary_2" class="form-control is-invalid" placeholder="" >
-                        <label for="basic_salary_2"> الراتب الاساسي 2</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="reasons_for_leaving_2" name="reasons_for_leaving_2" class="form-control is-invalid" placeholder="" >
-                        <label for="reasons_for_leaving_2"> سبب ترك الوظيفة 2</label>
+                    <div class="row mb-3">
+                        <div class="field col-6 ">
+                            <label for="positica_2"> الوظيفة </label>
+                            <input type="text" id="positica_2" name="positica_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="employer_name_2"> اسم الجهة</label>
+                            <input type="text" id="employer_name_2" name="employer_name_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_from_2">التاريخ من </label>
+                            <input type="date" id="date_from_2" name="date_from_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_to_2"> التاريخ الي </label>
+                            <input type="date" id="date_to_2" name="date_to_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="basic_salary_2"> الراتب الاساسي </label>
+                            <input type="text" id="basic_salary_2" name="basic_salary_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="reasons_for_leaving_2"> سبب ترك الوظيفة </label>
+                            <input type="text" id="reasons_for_leaving_2" name="reasons_for_leaving_2" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_last_jobs w-75" type="button" id="add_last_jobs_3" onclick="addlastjobs_3()">
-                        إضافة عمل
+                        إضافة وظيفة اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="last_jobs_3">
-                <span> 3 الوظائف الاخيرة</span>
+                <span>  الوظيفة الثالثة</span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="employer_name_3" name="employer_name_3" class="form-control is-invalid" placeholder="" >
-                        <label for="employer_name_3">3 اسم الجهة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="positica_3" name="positica_3" class="form-control is-invalid" placeholder="" >
-                        <label for="positica_3">اسم الوظيفة 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_from_3" name="date_from_3" class="form-control is-invalid" placeholder="" >
-                        <label for="date_from_3">التاريخ من 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_to_3" name="date_to_3" class="form-control is-invalid" placeholder="" >
-                        <label for="date_to_3"> التاريخ الي 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="basic_salary_3" name="basic_salary_3" class="form-control is-invalid" placeholder="" >
-                        <label for="basic_salary_3"> الراتب الاساسي 3</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="reasons_for_leaving_3" name="reasons_for_leaving_3" class="form-control is-invalid" placeholder="" >
-                        <label for="reasons_for_leaving_3"> سبب ترك الوظيفة 3</label>
+                    <div class="row mb-3">
+                        <div class="field col-6 ">
+                            <label for="positica_3"> الوظيفة </label>
+                            <input type="text" id="positica_3" name="positica_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="employer_name_3"> اسم الجهة</label>
+                            <input type="text" id="employer_name_3" name="employer_name_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_from_3">التاريخ من </label>
+                            <input type="date" id="date_from_3" name="date_from_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_to_3"> التاريخ الي </label>
+                            <input type="date" id="date_to_3" name="date_to_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="basic_salary_3"> الراتب الاساسي </label>
+                            <input type="text" id="basic_salary_3" name="basic_salary_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="reasons_for_leaving_3"> سبب ترك الوظيفة </label>
+                            <input type="text" id="reasons_for_leaving_3" name="reasons_for_leaving_3" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
                 <div class="addtion">
                     <button class="btn btn-secondary add_last_jobs w-75" type="button" id="add_last_jobs_4" onclick="addlastjobs_4()">
-                        اضافة عمل
+                          إضافة وظيفة اخرى
                     </button>
                 </div>
             </div>
             <div class="employee" id="last_jobs_4">
-                <span> 4 الوظائف الاخيرة</span>
+                <span>  الوظيفة الرابعة</span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="employer_name_4" name="employer_name_4" class="form-control is-invalid" placeholder="" >
-                        <label for="employer_name_4">4 اسم الجهة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="positica_4" name="positica_4" class="form-control is-invalid" placeholder="" >
-                        <label for="positica_4">اسم الوظيفة 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_from_4" name="date_from_4" class="form-control is-invalid" placeholder="" >
-                        <label for="date_from_4">التاريخ من 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="date" id="date_to_4" name="date_to_4" class="form-control is-invalid" placeholder="" >
-                        <label for="date_to_4"> التاريخ الي 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="basic_salary_4" name="basic_salary_4" class="form-control is-invalid" placeholder="" >
-                        <label for="basic_salary_4"> الراتب الاساسي 4</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="reasons_for_leaving_4" name="reasons_for_leaving_4" class="form-control is-invalid" placeholder="" >
-                        <label for="reasons_for_leaving_4"> سبب ترك الوظيفة 4</label>
+                    <div class="row mb-3">
+                        <div class="field col-6 ">
+                            <label for="positica_4"> الوظيفة </label>
+                            <input type="text" id="positica_4" name="positica_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6 ">
+                            <label for="employer_name_4"> اسم الجهة</label>
+                            <input type="text" id="employer_name_4" name="employer_name_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_from_4">التاريخ من </label>
+                            <input type="date" id="date_from_4" name="date_from_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="date_to_4"> التاريخ الي </label>
+                            <input type="date" id="date_to_4" name="date_to_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="basic_salary_4"> الراتب الاساسي </label>
+                            <input type="text" id="basic_salary_4" name="basic_salary_4" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-6">
+                            <label for="reasons_for_leaving_4"> سبب ترك الوظيفة </label>
+                            <input type="text" id="reasons_for_leaving_4" name="reasons_for_leaving_4" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -590,8 +610,8 @@
                 <span> إجمالي الدخل الشهري لأخر وظيفة</span>
                 <div class="fields w-100">
                     <div class="field w-100">
-                        <input type="number" id="last_sallary" name="last_sallary" class="input-group w-75" placeholder="" required>
                         <label for="last_sallary">الراتب الأخير</label>
+                        <input type="number" id="last_sallary" name="last_sallary" class="form-control is-invalid" placeholder="" >
                     </div>
                 </div>
             </div>
@@ -599,21 +619,23 @@
             <div class="employee" id="skills">
                 <span> المهارات </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="skills_1" name="skills_1" class="form-control is-invalid" placeholder="" >
-                        <label for="skills_1">1 مهارة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="skills_2" name="skills_2" class="form-control is-invalid" placeholder="" >
-                        <label for="skills_2">2 مهارة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="skills_3" name="skills_3" class="form-control is-invalid" placeholder="" >
-                        <label for="skills_3">3 مهارة</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="skills_4" name="skills_4" class="form-control is-invalid" placeholder="" >
-                        <label for="skills_4">4 مهارة</label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-xl-3 col-md-6">
+                            <label for="skills_1">1 مهارة</label>
+                            <input type="text" id="skills_1" name="skills_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-xl-3 col-md-6">
+                            <label for="skills_2">2 مهارة</label>
+                            <input type="text" id="skills_2" name="skills_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-xl-3 col-md-6">
+                            <label for="skills_3">3 مهارة</label>
+                            <input type="text" id="skills_3" name="skills_3" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-xl-3 col-md-6">
+                            <label for="skills_4">4 مهارة</label>
+                            <input type="text" id="skills_4" name="skills_4" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -621,58 +643,80 @@
             <div class="employee" id="arabic">
                 <span> اللغة العربية </span>
                 <div class="fields">
-                    <div class="field">
-                        <select id="arabic_reading" name="arabic_reading" required>
-                            <option value="جيد">جيد</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ضعيف">ضعيف</option>
-                        </select>
-                        <label for="arabic_reading"> القراءة </label>
-                    </div>
-                    <div class="field">
-                        <select id="arabic_writing" name="arabic_writing" required>
-                            <option value="جيد">جيد</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ضعيف">ضعيف</option>
-                        </select>
-                        <label for="arabic_writing"> الكتابة </label>
-                    </div>
-                    <div class="field">
-                        <select id="arabic_speaking" name="arabic_speaking" required>
-                            <option value="جيد">جيد</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ضعيف">ضعيف</option>
-                        </select>
-                        <label for="arabic_speaking"> التحدث </label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-xl-4 col-md-4 col-sm-4">
+                            <label for="arabic_reading"> القراءة
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select id="arabic_reading" name="arabic_reading" class="custom-select is-invalid" required>
+                                <option disabled selected value="">-</option>
+                                <option value="جيد">جيد</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="ضعيف">ضعيف</option>
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-4 col-md-4 col-sm-4">
+                            <label for="arabic_writing"> الكتابة
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select id="arabic_writing" name="arabic_writing" class="custom-select is-invalid" required>
+                                <option disabled selected value="">-</option>
+                                <option value="جيد">جيد</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="ضعيف">ضعيف</option>
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-4 col-md-4 col-sm-4">
+                            <label for="arabic_speaking"> التحدث
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select id="arabic_speaking" name="arabic_speaking" class="custom-select is-invalid" required>
+                                <option disabled selected value="">-</option>
+                                <option value="جيد">جيد</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="ضعيف">ضعيف</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="employee" id="english">
                 <span> اللغة الأنجليزية </span>
                 <div class="fields">
-                    <div class="field">
-                        <select id="english_reading" name="english_reading" required>
-                            <option value="جيد">جيد</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ضعيف">ضعيف</option>
-                        </select>
-                        <label for="english_reading"> القراءة </label>
-                    </div>
-                    <div class="field">
-                        <select id="english_writing" name="english_writing" required>
-                            <option value="جيد">جيد</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ضعيف">ضعيف</option>
-                        </select>
-                        <label for="english_writing"> الكتابة </label>
-                    </div>
-                    <div class="field">
-                        <select id="english_speaking" name="english_speaking" required>
-                            <option value="جيد">جيد</option>
-                            <option value="متوسط">متوسط</option>
-                            <option value="ضعيف">ضعيف</option>
-                        </select>
-                        <label for="english_speaking"> التحدث </label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-xl-4 col-md-4 col-sm-4">
+                            <label for="english_reading"> القراءة
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select id="english_reading" name="english_reading" class="custom-select is-invalid" required>
+                                <option disabled selected value="">-</option>
+                                <option value="جيد">جيد</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="ضعيف">ضعيف</option>
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-4 col-md-4 col-sm-4">
+                            <label for="english_writing"> الكتابة
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select id="english_writing" name="english_writing" class="custom-select is-invalid" required>
+                                <option disabled selected value="">-</option>
+                                <option value="جيد">جيد</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="ضعيف">ضعيف</option>
+                            </select>
+                        </div>
+                        <div class="field col-12 col-xl-4 col-md-4 col-sm-4">
+                            <label for="english_speaking"> التحدث
+                                <span class="text-danger">*</span>
+                            </label>
+                            <select id="english_speaking" name="english_speaking" class="custom-select is-invalid" required>
+                                <option disabled selected value="">-</option>
+                                <option value="جيد">جيد</option>
+                                <option value="متوسط">متوسط</option>
+                                <option value="ضعيف">ضعيف</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -680,53 +724,67 @@
             <div class="employee" id="hobbies">
                 <span> الهوايات </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="hobbies_1" name="hobbies_1" class="form-control is-invalid" placeholder="" >
-                        <label for="hobbies_1">1 الهواية</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="hobbies_2" name="hobbies_2" class="form-control is-invalid" placeholder="" >
-                        <label for="hobbies_2">2 الهواية</label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-xl-6 col-md-6 col-sm-6">
+                            <label for="hobbies_1">1 الهواية</label>
+                            <input type="text" id="hobbies_1" name="hobbies_1" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-xl-6 col-md-6 col-sm-6">
+                            <label for="hobbies_2">2 الهواية</label>
+                            <input type="text" id="hobbies_2" name="hobbies_2" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="employee" id="person_1">
-                <span> اشخاص  بأمكاننا الأتصال بهم وقت الضرورة 1</span>
+                <span> اشخاص  بأمكاننا الأتصال بهم وقت الضرورة </span>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="person_name_1" name="person_name_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_name_1">1 اسم الشخص</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="person_relationship_1" name="person_relationship_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_relationship_1">1 صلة القرابه</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="person_phone_1" name="person_phone_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_phone_1">1 رقم الهاتف</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="person_address_1" name="person_address_1" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_address_1">1 العنوان</label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_name_1">الأول اسم الشخص
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" id="person_name_1" name="person_name_1" class="form-control is-invalid" placeholder="" required>
+                        </div>
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_relationship_1"> صلة القرابه
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" id="person_relationship_1" name="person_relationship_1" class="form-control is-invalid" placeholder="" required>
+                        </div>
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_phone_1"> رقم الهاتف
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" id="person_phone_1" name="person_phone_1" class="form-control is-invalid" placeholder="" required>
+                        </div>
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_address_1"> العنوان
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" id="person_address_1" name="person_address_1" class="form-control is-invalid" placeholder="" required>
+                        </div>
                     </div>
                 </div>
                 <div class="fields">
-                    <div class="field">
-                        <input type="text" id="person_name_2" name="person_name_2" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_name_2">2 اسم الشخص</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="person_relationship_2" name="person_relationship_2" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_relationship_2">2 صلة القرابه</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="person_phone_2" name="person_phone_2" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_phone_2">2 رقم الهاتف</label>
-                    </div>
-                    <div class="field">
-                        <input type="text" id="person_address_2" name="person_address_2" class="form-control is-invalid" placeholder="" required>
-                        <label for="person_address_2">2 العنوان</label>
+                    <div class="row mb-3">
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_name_2">الأول اسم الشخص</label>
+                            <input type="text" id="person_name_2" name="person_name_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_relationship_2"> صلة القرابه</label>
+                            <input type="text" id="person_relationship_2" name="person_relationship_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_phone_2"> رقم الهاتف</label>
+                            <input type="text" id="person_phone_2" name="person_phone_2" class="form-control is-invalid" placeholder="" >
+                        </div>
+                        <div class="field col-12 col-sm-6 col-xl-6 col-md-6">
+                            <label for="person_address_2"> العنوان</label>
+                            <input type="text" id="person_address_2" name="person_address_2" class="form-control is-invalid" placeholder="" >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -741,7 +799,6 @@
     <!-- js -->
     <script>
         const data = {
-            "-": ["-"],
             "القاهرة": ["مدينة نصر", "مصر الجديدة", "المعادي", "حلوان", "شبرا", "الزيتون", "عين شمس", "المرج", "المطرية", "السيدة زينب", "العباسية", "الزمالك", "وسط البلد", "دار السلام", "البساتين", "التجمع الخامس", "التجمع الأول", "التجمع الثالث", "القطامية", "المنيل", "حدائق القبة", "روض الفرج", "عابدين", "باب الشعرية", "بولاق", "الوايلي", "الخليفة", "الموسكي", "الظاهر", "القاهرة الجديدة"],
             "الجيزة": ["الهرم", "الدقي", "العجوزة", "أكتوبر", "الوراق", "البدرشين", "العياط", "الصف", "أطفيح", "الواحات البحرية", "منشأة القناطر", "كرداسة", "أبو النمرس", "الشيخ زايد", "الحوامدية", "المنيب", "بولاق الدكرور", "الطالبية", "الجيزة القديمة"],
             "الإسكندرية": ["المنتزه", "العجمي", "سيدي جابر", "محرم بك", "الجمرك", "الرمل", "برج العرب", "العامرية", "كرموز", "المندرة", "باكوس", "الحضرة", "أبو قير", "سبورتنج", "الشاطبي", "الإبراهيمية", "فيكتوريا", "سموحة", "ميامي", "جليم", "ستانلي", "كامب شيزار", "الأنفوشي", "الورديان"],
@@ -773,12 +830,9 @@
 
         window.onload = function() {
             const governorateSelect = document.getElementById("governorateSelect");
+            governorateSelect.innerHTML = '<option selected disabled value="">-</option>';
             for (let gov in data) {
                 const option = document.createElement("option");
-                if (gov === "-") {
-                    option.setAttribute("selected", "selected");
-                    option.setAttribute("disabled", "disabled");
-                }
                 option.value = gov;
                 option.textContent = gov;
                 governorateSelect.appendChild(option);
@@ -831,18 +885,12 @@
         });
 
         let qualification_2 = document.getElementById("qualification_2");
-        let qualification_3 = document.getElementById("qualification_3");
         window.addEventListener("load", function() {
             qualification_2.style.display = "none";
-            qualification_3.style.display = "none";
         });
         function addQualification_2() {
             qualification_2.style.display = "block";
             document.getElementById("add_qualification_2").style.display = "none";
-        }
-        function addQualification_3() {
-            qualification_3.style.display = "block";
-            document.getElementById("add_qualification_3").style.display = "none";
         }
 
         let course_2 = document.getElementById("course_2");
