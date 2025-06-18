@@ -64,7 +64,7 @@
             </ul>
         </li>
         <li class='li settings'>
-            <a href='settings' id="settings">
+            <a href={{ route('setting') }} id="settings">
                 <i class="fa-solid fa-gear"></i>
                 <span>الاعدادات</span>
             </a>

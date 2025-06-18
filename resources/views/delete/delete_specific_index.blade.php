@@ -143,7 +143,7 @@
         <!-- alert -->
         <div class="alert alert-success d-none" role="alert" id="alert"></div>
         <!-- id form -->
-        @include('../addition.settings');
+
         <!-- js files -->
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>

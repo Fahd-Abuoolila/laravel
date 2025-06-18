@@ -9,6 +9,7 @@ use App\Http\Controllers\employee_appointed_controller;
 use App\Http\Controllers\delete_appointed_controller;
 use App\Http\Controllers\employee_postpone_controller;
 use App\Http\Controllers\delete_postpone_controller;
+use App\Http\Controllers\setting_controller;
 
 // Route::get('/', function () {
 //     return view('login');
@@ -23,7 +24,6 @@ Route::post('/store_new_employee',[create_employee_controller::class, 'store'])-
 
 // --------------------
 // --------------------
-// --------------------
 Route::get('/specific',[employee_specific_controller::class, 'index'])->name('specific');
 Route::post('/show_specific',[employee_specific_controller::class, 'show'])->name('show_specific');
 Route::post('/delete_specific',[employee_specific_controller::class, 'delete'])->name('delete_specific');
@@ -33,7 +33,6 @@ Route::post('/postpone_specific',[employee_specific_controller::class, 'postpone
 Route::get('/delete/delete_specific_index',[delete_specific_controller::class, 'index'])->name('delete_specific_index');
 Route::post('/show_delete_specific_index',[delete_specific_controller::class, 'show'])->name('show_delete_specific_index');
 Route::post('/delete_specific_forever',[delete_specific_controller::class, 'delete'])->name('delete_specific_forever');
-// --------------------
 // --------------------
 // --------------------
 Route::get('/appointed',[employee_appointed_controller::class, 'index'])->name('appointed');
@@ -46,7 +45,6 @@ Route::post('/show_delete_appointed_index',[delete_appointed_controller::class, 
 Route::post('/delete_appointed_forever',[delete_appointed_controller::class, 'delete'])->name('delete_appointed_forever');
 // --------------------
 // --------------------
-// --------------------
 Route::get('/postpone',[employee_postpone_controller::class, 'index'])->name('postpone');
 Route::post('/show_postpone',[employee_postpone_controller::class, 'show'])->name('show_postpone');
 Route::post('/delete_postpone',[employee_postpone_controller::class, 'delete'])->name('delete_postpone');
@@ -56,6 +54,11 @@ Route::get('/delete/delete_postpone_index',[delete_postpone_controller::class, '
 Route::post('/show_delete_postpone_index',[delete_postpone_controller::class, 'show'])->name('show_delete_postpone_index');
 Route::post('/delete_postpone_forever',[delete_postpone_controller::class, 'delete'])->name('delete_postpone_forever');
 // --------------------
+// --------------------
+Route::get('/setting',[setting_controller::class, 'index'])->name('setting');
+Route::post('/setting_create',[setting_controller::class, 'create'])->name('setting_create');
+Route::post('/setting_edit',[setting_controller::class, 'edit'])->name('setting_edit');
+Route::post('/setting_delete',[setting_controller::class, 'delete'])->name('setting_delete');
 // --------------------
 // --------------------
 Route::fallback( function () {
