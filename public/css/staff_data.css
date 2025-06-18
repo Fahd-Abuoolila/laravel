@@ -51,16 +51,16 @@ div  .select + .btn:focus{
 .modal .form-group label{
     color: #000 !important;
 }
-.show-board .modal-header{
+.modal-header{
     border: none !important;
-    justify-content: flex-start;
+    justify-content: flex-start !important;
 }
-.show-board .modal-header span{
+.modal-header span{
     color: #5aaa57;
     margin: 0 10px;
     font-weight: 900;
 }
-.show-board .modal-header::before{
+.modal-header::before{
     content: '';
     background: #5aaa57;
     height: 30px;
@@ -80,9 +80,12 @@ table .dropdown-menu.show{
 table tbody tr{
     transition: all .3s;
 }
-table tbody tr:hover{
+/* :not(.cv_container) table tbody tr:hover{
     background-color: #5aaa579a !important;
     color: #000 !important;
+} */
+.cv_container table td{
+    border: 1px solid #000;
 }
 .person-image .form-group{
     display: block;

@@ -14,6 +14,11 @@
     font-style: normal;
 }
 
+.row{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
     background: #ced4da;
@@ -193,12 +198,17 @@ svg.svg-inline--fa.fa-bars-staggered {
 .header>div>div#nav>.navbar-collapse>div .dropdown .dropdown-menu.show .dropdown-item p:last-child {
     direction: ltr;
 }
-
+.cv_container{
+    max-width: 1024px;
+    min-width: 1024px;
+    margin-top: 50px;
+}
 /* content */
 .content {
     height: calc(100vh - 56px);
     overflow-x: hidden;
     display: flex;
+    width: 100%;
 }
 
 .content p {
@@ -211,6 +221,9 @@ svg.svg-inline--fa.fa-bars-staggered {
     margin: 10px;
     overflow-x: overlay;
     padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title-info {
@@ -221,6 +234,15 @@ svg.svg-inline--fa.fa-bars-staggered {
     justify-content: space-between;
     border-radius: 8px;
     margin: 10px 0;
+    width: 100%;
+}
+
+.title-info + form{
+    width: 100%;
+}
+
+.title-info + form h5 span{
+    margin-right: 15px;
 }
 
 .data-info {
@@ -230,7 +252,7 @@ svg.svg-inline--fa.fa-bars-staggered {
     flex-wrap: wrap;
     gap: 10px;
     overflow-x: visible;
-
+    width: 100%;
 }
 
 .data-info .box {
@@ -264,9 +286,9 @@ svg.svg-inline--fa.fa-bars-staggered {
     justify-content: flex-end;
 }
 
-.show-board>nav .export {
+/* .show-board>nav .export {
     background: #0056B3;
-}
+} */
 
 /* media */
 @media (max-width: 1000px) {
@@ -365,10 +387,10 @@ tr {
     color: #000;
 }
 
-table tr:not(.no):hover {
-    background-color: #5aaa57;
+/* div:not(.cv_container) table tr:not(.no):hover {
+    background-color: #5aaa579c;
     color: var(--SecondColorBack);
-}
+} */
 
 table tr.no:hover {
     background-color: #ffffff !important;

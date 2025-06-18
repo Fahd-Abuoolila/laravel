@@ -16,7 +16,7 @@
         <title>Roaya Pay</title>
         <style>
             .menu > ul > li:nth-child(1):not(.open) > a ,
-            .menu > ul > li:nth-child(1) > a + ul > li:nth-child(1) > a{
+            .menu > ul > li:nth-child(1) > a + ul > li:nth-child(2) > a{
                 background: #5aaa5791 !important;
             }
         </style>

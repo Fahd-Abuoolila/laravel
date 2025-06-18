@@ -15,11 +15,12 @@ a.active{
 .menu > ul > li{
     list-style: none;
     padding: 0 10px 10px;
+    cursor: pointer;
 }
 .menu > ul li a {
     font-size: 15px;
     font-weight: 400;
-    color: #000;
+    color: #000 !important;
     padding: 10px 15px;
     transition: .3s;
     position: relative;
@@ -29,9 +30,9 @@ a.active{
     grid-gap: 15px;
     align-items: center;
     margin-top: 25px;
-    text-decoration: none;
-    border-radius: 10px;
-    background: #8d8d8d4f;
+    text-decoration: none !important;
+    border-radius: 10px !important;
+    background: #8d8d8d4f !important;
 }
 .menu>ul>li>ul a {
     background: none;

@@ -1,0 +1,132 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\delete_appointed_model;
+use App\Models\employee_appointed_model;
+
+class employee_appointed_controller extends Controller
+{
+    public function index()
+    {
+        $data = employee_appointed_model::all();
+        return view('employee_appointed', ['data' => $data]);
+    }
+    public function show(Request $request){
+        $id = $request->id;
+        $person = employee_appointed_model::find($id,['*']);
+        return view('show/appointed', ['person'=> $person]);
+    }
+    public function delete(Request $request){
+        $id = $request->id;
+        $person = employee_appointed_model::find($id,['*']);
+        $insert = [
+            'first_name' => $person->first_name,
+            'second_name' => $person->second_name,
+            'third_name' => $person->third_name,
+            'last_name' => $person->last_name,
+            'national_id' => $person->national_id,
+            'nationality' => $person->nationality,
+            'place_of_birth' => $person->place_of_birth,
+            'date_of_birth' => $person->date_of_birth,
+            'insurance_num' => $person->insurance_num,
+            'conscription' => $person->conscription,
+            'marital_status' => $person->marital_status,
+            'Num_of_children' => $person->Num_of_children,
+            'job_required' => $person->job_required,
+            'frontOFcard_up' => $person->frontOFcard_up,
+            'backOFcard_up' => $person->backOFcard_up,
+            'photoOFuser_up' => $person->photoOFuser_up,
+            'number_tel_1' => $person->number_tel_1,
+            'number_tel_2' => $person->number_tel_2,
+            'place_of_residence' => $person->place_of_residence,
+            'governorate' => $person->governorate,
+            'centre' => $person->centre,
+            'employ_email' => $person->employ_email,
+            'academic_qualification_1' => $person->academic_qualification_1,
+            'scientific_specialization_1' => $person->scientific_specialization_1,
+            'university_1' => $person->university_1,
+            'year_graduated_1' => $person->year_graduated_1,
+            'academic_qualification_2' => $person->academic_qualification_2,
+            'scientific_specialization_2' => $person->scientific_specialization_2,
+            'university_2' => $person->university_2,
+            'year_graduated_2' => $person->year_graduated_2,
+            'course_name_1' => $person->course_name_1,
+            'duration_1' => $person->duration_1,
+            'sponsor_1' => $person->sponsor_1,
+            'course_date_1' => $person->course_date_1,
+            'course_location_1' => $person->course_location_1,
+            'course_name_2' => $person->course_name_2,
+            'duration_2' => $person->duration_2,
+            'sponsor_2' => $person->sponsor_2,
+            'course_date_2' => $person->course_date_2,
+            'course_location_2' => $person->course_location_2,
+            'course_name_3' => $person->course_name_3,
+            'duration_3' => $person->duration_3,
+            'sponsor_3' => $person->sponsor_3,
+            'course_date_3' => $person->course_date_3,
+            'course_location_3' => $person->course_location_3,
+            'course_name_4' => $person->course_name_4,
+            'duration_4' => $person->duration_4,
+            'sponsor_4' => $person->sponsor_4,
+            'course_date_4' => $person->course_date_4,
+            'course_location_4' => $person->course_location_4,
+            'course_name_5' => $person->course_name_5,
+            'duration_5' => $person->duration_5,
+            'sponsor_5' => $person->sponsor_5,
+            'course_date_5' => $person->course_date_5,
+            'course_location_5' => $person->course_location_5,
+            'employer_name_1' => $person->employer_name_1,
+            'positica_1' => $person->positica_1,
+            'date_from_1' => $person->date_from_1,
+            'date_to_1' => $person->date_to_1,
+            'basic_salary_1' => $person->basic_salary_1,
+            'reason_for_leaving_1' => $person->reason_for_leaving_1,
+            'employer_name_2' => $person->employer_name_2,
+            'positica_2' => $person->positica_2,
+            'date_from_2' => $person->date_from_2,
+            'date_to_2' => $person->date_to_2,
+            'basic_salary_2' => $person->basic_salary_2,
+            'reason_for_leaving_2' => $person->reason_for_leaving_2,
+            'employer_name_3' => $person->employer_name_3,
+            'positica_3' => $person->positica_3,
+            'date_from_3' => $person->date_from_3,
+            'date_to_3' => $person->date_to_3,
+            'basic_salary_3' => $person->basic_salary_3,
+            'reason_for_leaving_3' => $person->reason_for_leaving_3,
+            'employer_name_4' => $person->employer_name_4,
+            'positica_4' => $person->positica_4,
+            'date_from_4' => $person->date_from_4,
+            'date_to_4' => $person->date_to_4,
+            'basic_salary_4' => $person->basic_salary_4,
+            'reason_for_leaving_4' => $person->reason_for_leaving_4,
+            'last_sallary' => $person->last_sallary,
+            'skills_1' => $person->skills_1,
+            'skills_2' => $person->skills_2,
+            'skills_3' => $person->skills_3,
+            'skills_4' => $person->skills_4,
+            'arabic_reading' => $person->arabic_reading,
+            'arabic_writing' => $person->arabic_writing,
+            'arabic_speaking' => $person->arabic_speaking,
+            'english_reading' => $person->english_reading,
+            'english_writing' => $person->english_writing,
+            'english_speaking' => $person->english_speaking,
+            'hobbies_1' => $person->hobbies_1,
+            'hobbies_2' => $person->hobbies_2,
+            'person_name_1' => $person->person_name_1,
+            'person_relationship_1' => $person->person_relationship_1,
+            'person_phone_1' => $person->person_phone_1,
+            'person_address_1' => $person->person_address_1,
+            'person_name_2' => $person->person_name_2,
+            'person_relationship_2' => $person->person_relationship_2,
+            'person_phone_2' => $person->person_phone_2,
+            'person_address_2' => $person->person_address_2,
+            'reason' => $request->input('reason'),
+            'reason_notes' => $request->input('reason_notes'),
+        ];
+        delete_appointed_model::create($insert);
+        $person->delete();
+        return redirect()->route('appointed');
+    }
+}

@@ -35,9 +35,7 @@ return new class extends Migration
                     'gpa_3',
                 ]);
             }
-            $table->string('scientific_specialization_1', 50)->after('academic_qualification_1');
-            $table->string('scientific_specialization_2', 50)->after('academic_qualification_2');
-            $table->string('scientific_specialization_3', 50)->after('academic_qualification_3');
+
         });
         Schema::table('delete_specific', function (Blueprint $table) {
             if (
@@ -63,9 +61,7 @@ return new class extends Migration
                     'gpa_3',
                 ]);
             }
-            $table->string('scientific_specialization_1', 50)->after('academic_qualification_1');
-            $table->string('scientific_specialization_2', 50)->after('academic_qualification_2');
-            $table->string('scientific_specialization_3', 50)->after('academic_qualification_3');
+
         });
         Schema::table('employees_postpone', function (Blueprint $table) {
             if (
@@ -91,9 +87,7 @@ return new class extends Migration
                     'gpa_3',
                 ]);
             }
-            $table->string('scientific_specialization_1', 50)->after('academic_qualification_1');
-            $table->string('scientific_specialization_2', 50)->after('academic_qualification_2');
-            $table->string('scientific_specialization_3', 50)->after('academic_qualification_3');
+
         });
         Schema::table('delete_postpone', function (Blueprint $table) {
             if (
@@ -119,9 +113,7 @@ return new class extends Migration
                     'gpa_3',
                 ]);
             }
-            $table->string('scientific_specialization_1', 50)->after('academic_qualification_1');
-            $table->string('scientific_specialization_2', 50)->after('academic_qualification_2');
-            $table->string('scientific_specialization_3', 50)->after('academic_qualification_3');
+
         });
         Schema::table('employees_appointed', function (Blueprint $table) {
             if (
@@ -147,9 +139,7 @@ return new class extends Migration
                     'gpa_3',
                 ]);
             }
-            $table->string('scientific_specialization_1', 50)->after('academic_qualification_1');
-            $table->string('scientific_specialization_2', 50)->after('academic_qualification_2');
-            $table->string('scientific_specialization_3', 50)->after('academic_qualification_3');
+
         });
         Schema::table('delete_appointed', function (Blueprint $table) {
             if (
@@ -175,9 +165,7 @@ return new class extends Migration
                     'gpa_3',
                 ]);
             }
-            $table->string('scientific_specialization_1', 50)->after('academic_qualification_1');
-            $table->string('scientific_specialization_2', 50)->after('academic_qualification_2');
-            $table->string('scientific_specialization_3', 50)->after('academic_qualification_3');
+
         });
     }
 

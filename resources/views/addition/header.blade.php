@@ -6,7 +6,7 @@
             </a>
             <i class="fa-solid fa-bars-staggered"></i>
         </div>
-        <div id='nav'> 
+        <div id='nav'>
             <div class='collapse navbar-collapse mx-2'>
                 <div>
                     <div class='dropdowns'>

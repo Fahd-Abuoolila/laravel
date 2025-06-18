@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link -->
-    <link rel='icon' href="{{ asset('img/Roaya_icon.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/create.css') }}">
+    <link rel='icon' href="{{ secure_asset('img/Roaya_icon.png') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/create.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
+    <!-- style -->
+    <style>
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 1;
+            cursor: pointer;
+        }
+    </style>
     <!-- title -->
     <title>شركة رؤية باي &nbsp;&nbsp;|&nbsp;&nbsp; إستمارة تقديم</title>
 </head>
@@ -79,7 +87,7 @@
                                  تاريخ الميلاد
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="date" id="date_of_birth" name="date_of_birth" class="form-control is-invalid" placeholder="" required>
+                            <input type="date" id="date_of_birth" name="date_of_birth" class="form-control is-invalid" inputmode="none" required />
                         </div>
                         <div class="field col-6 col-xl-3 col-md-3">
                             <label for="place_of_birth">
@@ -986,14 +994,55 @@
             }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const input = document.getElementById('date_of_birth');
 
-    <script src="{{ asset('js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
-    <script src="{{ asset('js/all.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/log.js') }}"></script>
+            input.addEventListener('keydown', function (e) {
+                e.preventDefault();
+            });
+            input.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+            input.addEventListener('paste', function (e) {
+                e.preventDefault();
+            });
+
+            // ✅ 2: تشغيل Litepicker
+            const picker = new Litepicker({
+                element: input,
+                format: 'YYYY-MM-DD',
+                maxDate: new Date(),
+                dropdowns: {
+                    minYear: 1950,
+                    maxYear: new Date().getFullYear(),
+                    months: true,
+                    years: true
+                },
+                lang: 'en-US',
+                setup: (picker) => {
+                    picker.on('selected', (date) => {
+                        input.classList.add('is-valid');
+
+                        // ✅ 3: إطلاق حدث input علشان validation يشتغل
+                        const event = new Event('input', {
+                            bubbles: true,
+                            cancelable: true,
+                        });
+                        input.dispatchEvent(event);
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="{{ secure_asset('js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery-3.7.0.min.js') }}"></script>
+    <script src="{{ secure_asset('js/popper.min.js') }}"></script>
+    <script src="{{ secure_asset('js/bootstrap.js') }}"></script>
+    <script src="{{ secure_asset('js/all.min.js') }}"></script>
+    <script src="{{ secure_asset('js/main.js') }}"></script>
+    <script src="{{ secure_asset('js/log.js') }}"></script>
 </body>
 
 </html>
