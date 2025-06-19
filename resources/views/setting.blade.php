@@ -1,3 +1,7 @@
+
+@if(@isset($mood_sended) && !@empty($mood_sended))
+    @php $mood = $mood_sended; @endphp
+@endif
 <!DOCTYPE html>
 <html lang="ar">
     <head>
@@ -47,12 +51,9 @@
                         </div>
                     </div>
                 </div>
-                @php
-                    $mood = 'update';
-                @endphp
-                {{ $mood }}
                 @if($mood == 'create')
                     <form action="{{ route('setting_create') }}" method="post" id="form">
+                        @csrf
                         <div class="modal-header text-light">
                             <h5 class="modal-title" id="showdataTitle">إنشاء عنصر</h5>
                         </div>
@@ -73,7 +74,7 @@
                                 <div class="form-group">
                                     <label for="ability"> القدرة </label>
                                     <select name="ability" class="form-control" style="width: 209px;" id="people_ability" required>
-                                        <option value=""></option>
+                                        <option value="" selected disabled></option>
                                         <option value="true">قادر</option>
                                         <option value="false">غير قادر</option>
                                     </select>
@@ -85,7 +86,7 @@
                                 <div class="form-group">
                                     <label for="active"> النشاط </label>
                                     <select name="active" class="form-control" style="width: 209px;" id="people_active" required>
-                                        <option value=""></option>
+                                        <option value="" selected disabled></option>
                                         <option value="true">نشط</option>
                                         <option value="false">غير نشط</option>
                                     </select>
@@ -99,52 +100,56 @@
                         </div>
                     </form>
                 @elseif ($mood == 'update')
-                    <form action="{{ route('setting_edit')  }}" method="post" id="form">
-                        <div class="modal-header text-light">
-                            <h5 class="modal-title" id="showdataTitle">تعديل بيانات العنصر رقم {{ $row->id }}</h5>
-                        </div>
-                        <div class="form-row py-3">
-                            <div class="col-xl-12 col-md-10 col-sm-10 inputs-group">
-                                <div class="form-group">
-                                    <label for="name"> الأسم على النظام </label>
-                                    <input type="text" class="form-control" name="name" id="people_name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">البريد على النظام</label>
-                                    <input type="text" class="form-control " name="email" id="people_email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">كلمة المرور</label>
-                                    <input type="text" class="form-control " name="password" id="people_password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ability"> القدرة </label>
-                                    <select name="ability" class="form-control" style="width: 209px;" id="people_ability" required>
-                                        <option value=""></option>
-                                        <option value="true">قادر</option>
-                                        <option value="false">غير قادر</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="job"> الوظيفة</label>
-                                    <input type="text" class="form-control" name="job" id="people_job" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="active"> النشاط </label>
-                                    <select name="active" class="form-control" style="width: 209px;" id="people_active" required>
-                                        <option value=""></option>
-                                        <option value="true">نشط</option>
-                                        <option value="false">غير نشط</option>
-                                    </select>
-                                </div>
+                    @if (isset($data_edit) && isset($num))
+                        <form action="{{ route('setting_update') }}" method="post" id="form">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $data_edit->id }}">
+                            <div class="modal-header text-light">
+                                <h5 class="modal-title" id="showdataTitle">تعديل عنصر
+                                    <span class="text-succes">
+                                        {{ $num }}
+                                    </span>
+                                </h5>
                             </div>
+                            <div class="form-row py-3">
+                                <div class="col-xl-12 col-md-10 col-sm-10 inputs-group">
+                                    <div class="form-group">
+                                        <label for="name"> الأسم على النظام </label>
+                                        <input type="text" class="form-control" name="name" id="people_name" value="{{ $data_edit->name }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">البريد على النظام</label>
+                                        <input type="text" class="form-control" style="width:300px !important" name="email" id="people_email" value="{{ $data_edit->email }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ability"> القدرة </label>
+                                        <select name="ability" class="form-control" style="width: 209px;" id="people_ability" required>
+                                            <option value="" disabled></option>
+                                            <option value="true" {{($data_edit->active ?? '') == 'true' ? 'selected' : '' }}>قادر</option>
+                                            <option value="false" {{($data_edit->active ?? '') == 'false' ? 'selected' : '' }}>غير قادر</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="job"> الوظيفة</label>
+                                        <input type="text" class="form-control" name="job" id="people_job" value="{{ $data_edit->job }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="active"> النشاط </label>
+                                        <select name="active" class="form-control" style="width: 209px;" id="people_active" required>
+                                            <option value="" disabled></option>
+                                            <option value="true" {{($data_edit->active ?? '') == 'true' ? 'selected' : '' }}>نشط</option>
+                                            <option value="false" {{ ($data_edit->active ?? '') == 'false' ? 'selected' : '' }}>غير نشط</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" name="submit" class="btn btn-success ml-2 w-100" data-dismiss="modal" id="save">تسجيل</button>
-                            <button type="reset" class="btn btn-success ml-2 w-100" data-dismiss="modal" id="clear">تنظيف</button>
-                        </div>
-                    </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" name="submit" class="btn btn-success ml-2 w-100" data-dismiss="modal" id="save">تعديل</button>
+                                <button type="reset" class="btn btn-success ml-2 w-100" data-dismiss="modal" id="clear">تنظيف</button>
+                            </div>
+                        </form>
+                    @endif
                 @endif
                 <div class="data-info">
                     <table class="table table-bordered table-striped" id="table">
@@ -177,15 +182,16 @@
                                                     <svg class='svg-inline--fa fa-gear p-1' aria-hidden='true' focusable='false' data-prefix='fas' data-icon='gear' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' data-fa-i2svg=''><path fill='currentColor' d='M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z'></path></svg><!-- <i class='fa fa-cog p-1'></i> Font Awesome fontawesome.com -->
                                                 </button>
                                                 <div class='dropdown-menu' style='position: absolute; transform: translate3d(2px, 35px, 0px); top: 0px; left: 0px; will-change: transform;' x-placement='bottom-start'>
-                                                    <form action='settings' method='POST'>
-                                                        <input type='hidden' id='employid' name='employid' value="{{ $row['id'] }}">
-                                                        <input type='hidden' id='id' name='number' value='$i'>
-                                                        <input type='hidden' id='mood' name='mood' value='update'>
+                                                    <form action="{{ route('setting_edit') }}" method='POST'>
+                                                        @csrf
+                                                        <input type='hidden' id='id' name='id' value="{{ $row->id }}">
+                                                        <input type='hidden' id='id' name='num' value="{{ $i }}">
                                                         <button type='submit' name='edit' class='btn btn-primary w-100 m-1'>
                                                             تعديل
                                                         </button>
                                                     </form>
-                                                    <form action='php/delete' method='post'>
+                                                    <form action={{ route('setting_delete') }} method='post'>
+                                                        @csrf
                                                         <input type='hidden' id='id' name='id' value="{{ $row['id'] }}">
                                                         <button class='btn btn-danger w-100 m-1' type='submit'>
                                                             حذف
@@ -202,37 +208,6 @@
                 </div>
             </div>
         </div>
-        <?php
-            if(isset($_POST['edit'])){
-                $id = $_POST['id'];
-                $peoples = mysqli_query($conection, "SELECT * FROM users WHERE id=$id");
-                $people = mysqli_fetch_array($peoples);
-
-                $number = $_POST['number'];
-                $mood = $_POST['mood'];
-                if($mood == 'update'){
-                    echo "<script>
-                        const rowid = document.querySelector('#rowid');
-                        const people_name = document.querySelector('#people_name');
-                        const people_email = document.querySelector('#people_email');
-                        const people_password = document.querySelector('#people_password');
-                        const people_ability = document.querySelector('#people_ability');
-                        const people_job = document.querySelector('#people_job');
-                        const people_active = document.querySelector('#people_active');
-
-                        rowid.value = '$people[id]';
-                        people_name.value = '$people[employ_name]';
-                        people_email.value = '$people[employ_email]';
-                        people_password.value = '$people[employ_password]';
-                        people_ability.value = '$people[ability]';
-                        people_job.value = '$people[job]';
-                        people_active.value = '$people[active]';
-                        save.innerHTML = 'إعادة تسجيل العنصر';
-                        showdataTitle.innerHTML = 'تعديل العنصر' + `<span>$number</span>`;
-                    </script>";
-                };
-            }
-        ?>
         <!-- alert -->
         <div class="alert alert-success d-none" role="alert" id="alert"></div>
         <!-- id form -->

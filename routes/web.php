@@ -10,17 +10,17 @@ use App\Http\Controllers\delete_appointed_controller;
 use App\Http\Controllers\employee_postpone_controller;
 use App\Http\Controllers\delete_postpone_controller;
 use App\Http\Controllers\setting_controller;
+use App\Http\Controllers\sendemail;
 
 // Route::get('/', function () {
 //     return view('login');
 // });
 
-Route::get('/dashboard',function (){
-    return employee_specific_model::all();
-});
 
 Route::get('/create',[create_employee_controller::class, 'create'])->name('create');
+Route::get('/win',[create_employee_controller::class, 'win'])->name('win');
 Route::post('/store_new_employee',[create_employee_controller::class, 'store'])->name('store_new_employee');
+Route::post('/send',[sendemail::class,'sendemail'])->name('send');
 
 // --------------------
 // --------------------
@@ -57,7 +57,8 @@ Route::post('/delete_postpone_forever',[delete_postpone_controller::class, 'dele
 // --------------------
 Route::get('/setting',[setting_controller::class, 'index'])->name('setting');
 Route::post('/setting_create',[setting_controller::class, 'create'])->name('setting_create');
-Route::post('/setting_edit',[setting_controller::class, 'edit'])->name('setting_edit');
+Route::post('/setting_edit',[setting_controller::class, 'go_edit'])->name('setting_edit');
+Route::post('/setting_update',[setting_controller::class, 'update'])->name('setting_update');
 Route::post('/setting_delete',[setting_controller::class, 'delete'])->name('setting_delete');
 // --------------------
 // --------------------

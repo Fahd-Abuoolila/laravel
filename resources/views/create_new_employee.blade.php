@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link -->
-    <link rel='icon' href="{{ secure_asset('img/Roaya_icon.png') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/create.css') }}">
+    <link rel='icon' href="{{ asset('img/Roaya_icon.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
     <!-- style -->
     <style>
@@ -1036,13 +1036,13 @@
             });
         });
     </script>
-    <script src="{{ secure_asset('js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js') }}"></script>
-    <script src="{{ secure_asset('js/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ secure_asset('js/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('js/bootstrap.js') }}"></script>
-    <script src="{{ secure_asset('js/all.min.js') }}"></script>
-    <script src="{{ secure_asset('js/main.js') }}"></script>
-    <script src="{{ secure_asset('js/log.js') }}"></script>
+    <script src="{{ asset('js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/all.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/log.js') }}"></script>
 </body>
 
 </html>

@@ -12,6 +12,10 @@ class create_employee_controller extends Controller
     {
         return view('create_new_employee');
     }
+    public function win()
+    {
+        return view('win');
+    }
     public function store(Request $request)
     {
         if ($request->hasFile('frontOFcard')) {
@@ -341,7 +345,9 @@ class create_employee_controller extends Controller
             'reason_notes' => '',
         ];
 
+        $fullname = $request->input('first_name'). " " .$request->input('second_name'). " " .$request->input('third_name'). " " .$request->input('last_name');
+
         Create_employee_model::create($insert);
-        return redirect()->route('create');
+        return view('redirect_to_send',['fullname'=>$fullname,'email'=>$request->input('useremail')]);
     }
 };
