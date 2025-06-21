@@ -11,11 +11,18 @@ use App\Http\Controllers\employee_postpone_controller;
 use App\Http\Controllers\delete_postpone_controller;
 use App\Http\Controllers\setting_controller;
 use App\Http\Controllers\sendemail;
+use App\Http\Controllers\print_generate_pdf_controller;
 
 // Route::get('/', function () {
 //     return view('login');
 // });
 
+Route::post('/indexPDF',[print_generate_pdf_controller::class, 'indexPDF'])->name('indexPDF');
+Route::post('/appointedPDF',[print_generate_pdf_controller::class, 'appointedPDF'])->name('appointedPDF');
+Route::post('/postponePDF',[print_generate_pdf_controller::class, 'postponePDF'])->name('postponePDF');
+Route::post('/del_indexPDF',[print_generate_pdf_controller::class, 'del_indexPDF'])->name('del_indexPDF');
+Route::post('/del_appointedPDF',[print_generate_pdf_controller::class, 'del_appointedPDF'])->name('del_appointedPDF');
+Route::post('/del_postponePDF',[print_generate_pdf_controller::class, 'del_postponePDF'])->name('del_postponePDF');
 
 Route::get('/create',[create_employee_controller::class, 'create'])->name('create');
 Route::get('/win',[create_employee_controller::class, 'win'])->name('win');

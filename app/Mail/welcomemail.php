@@ -40,6 +40,7 @@ class welcomemail extends Mailable
     {
         return new Content(
             view: 'emails.welcomeemail',
+            with: $this->data,
         );
     }
 

@@ -46,9 +46,13 @@
             <div class='show-board'>
                 <div class='title-info'>
                     <p>بيانات الموظفين</p>
-                    <div class='btns-export-group'>
-                        <button class='btn export mx-2' id="export">التصدير الي pdf</button>
-                    </div>
+                    <form action="{{ route('postponePDF') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="person_id" value="{{ $person->employee_id }}">
+                        <div class='btns-export-group'>
+                            <button type="submit" class='btn export mx-2' id="export">التصدير الي pdf</button>
+                        </div>
+                    </form>
                 </div>
                 <form novalidate>
                     <div class='modal-header text-light'>

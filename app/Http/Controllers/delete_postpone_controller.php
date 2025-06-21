@@ -13,7 +13,7 @@ class delete_postpone_controller extends Controller
     public function show(Request $request){
         $id = $request->id;
         $person = delete_postpone_model::find($id,['*']);
-        return view('show/delete_index', ['person'=> $person]);
+        return view('show/delete_postpone', ['person'=> $person]);
     }
     public function delete(Request $request){
         $id = $request->id;

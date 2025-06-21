@@ -116,7 +116,7 @@
         <div class="title">السلام عليكم ...</div>
         <h3> الأستاذ :- </h3>
         @if (isset($data))
-            <div class="name-box">{{ $data->name }}</div>
+            <div class="name-box">{{ $fullname }}</div>
         @endif
         <div class="message">
             <p>تم استلام طلب التوظيف الخاص بك بنجاح.</p>
